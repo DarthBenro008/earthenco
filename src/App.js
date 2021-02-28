@@ -2,7 +2,9 @@ import "./App.css";
 import Globe from "./components/globs";
 import { useEffect, useState } from "react";
 import WelcomeScreen from "./components/welcome";
+import Intro from "./components/intro";
 import Overlay from "./components/overlay";
+import Globe2 from "./components/globe2";
 
 function App() {
   const [isWelcome, setIsWelcome] = useState(true);
@@ -28,7 +30,7 @@ function App() {
     <div className="absolute">
       <div>
         {/* <Globe /> */}
-        {isWelcome ? <WelcomeScreen moveNext={switchComponent} /> : <Globe />}
+        {isWelcome ? <WelcomeScreen moveNext={switchComponent} /> : <Globe2 />}
       </div>
       <div className="absolute text-white top-0">
         nice
