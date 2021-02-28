@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "./index.scss";
-import App from "./App";
 import App2 from "./components/app";
 import reportWebVitals from "./reportWebVitals";
 import { StateProvider, initialState, reducer } from "./data/state";
