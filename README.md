@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# Earthenco
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Header Image](assets/earthenco.png)
 
-## Available Scripts
+> One stop observability centre to battle Air Pollution!
 
-In the project directory, you can run:
+## The Problem
 
-### `yarn start`
+- Air Pollution is something that we humans have not paid attention to
+- Various chemical production and unregulated pollution destroy's our environment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## What is Earthenco?
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Earthenco is a one-stop "Observability" center where you can view various Air Particle data of anyplace anytime!
 
-### `yarn test`
+Earthenco aims to spread awareness about Air Pollution and recommned what plants you could plant to make your environment healthier.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `yarn build`
+```terminal
+git clone https://github.com/DarthBenro008/earthenco
+cd earthenco
+npm install
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Sample .env file
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+REACT_APP_KEY_OWA=
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Techstack
 
-### `yarn eject`
+- React
+- OpenWeather API
+- BigData ReverseGeoCoding API
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Author
+👨‍💻 Hemanth Krishna [@DarthBenro008](http://github.com/DarthBenro008)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Show your support
 
-## Learn More
+Give a ⭐ if this project made your life easy!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Spread the word to your fellows to help grow a healthy environment for us!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributions
 
-### Code Splitting
+- Feel Free to Open a PR/Issue for any feature or bug(s).
+- Make sure you follow the community guidelines!
+- Feel free to open an issue to ask a question/discuss anything about Earthenco.
+- Have a feature request? Open an Issue!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
+Copyright 2021 Hemanth Krishna
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Licensed under MIT License : https://opensource.org/licenses/MIT
