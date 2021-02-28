@@ -57,22 +57,18 @@ export default function Details(props) {
 
     content = (
       <>
-        <div className="header">
+        <div className="absolute bottom-10 left-10">
           <Button
             label="Back to globe"
             onClick={() => dispatch({ type: "FOCUS" })}
           />
-          <Button
-            label="Random City"
-            onClick={() => dispatch({ type: "FOCUS", payload: randomMarker })}
-          />
         </div>
         <div className="content">
           <h2>
-            {city}, {countryName} ({value})
+            {city}, {countryName}
           </h2>
           <div className="details-content">
-            Data
+            Air Information Data:
             <h5>
               {data?.list == null
                 ? ""
@@ -96,9 +92,7 @@ export default function Details(props) {
             <h5>
               {data?.list == null
                 ? ""
-                : "Fine Particles: " +
-                  data.list[0].components.pm2_5 +
-                  " μg/m3"}
+                : "Fine Particles: " + data.list[0].components.pm2_5 + " μg/m3"}
             </h5>
             <h5>
               {data?.list == null
@@ -117,6 +111,12 @@ export default function Details(props) {
             label="View search results"
             onClick={() => window.open(url, "_blank")}
           />
+          <div className="mt-5">
+            <Button
+              label="Go to Random City"
+              onClick={() => dispatch({ type: "FOCUS", payload: randomMarker })}
+            />
+          </div>
         </div>
       </>
     );

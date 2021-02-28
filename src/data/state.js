@@ -14,6 +14,7 @@ export const initialState = {
   //   relatedTopics,
   start: false,
   currentCoordinates: [20.5937, 78.9629],
+  currentLocationalData: {},
 };
 
 export function reducer(state, action) {
@@ -38,6 +39,16 @@ export function reducer(state, action) {
       return {
         ...state,
         currentCoordinates: payload,
+      };
+    case "LOCATIONAL":
+        const oldTrend = trends;
+        console.log(oldTrend);
+        oldTrend.push(payload);
+      return {
+        ...state,
+        markers: oldTrend,
+        currentCoordinates: payload.coordinates,
+        currentLocationalData: payload,
       };
     default:
       return state;

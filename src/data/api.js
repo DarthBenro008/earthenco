@@ -17,4 +17,13 @@ const fetchWeather = async (lat, lon) => {
   }
 };
 
+export const reverseGeoCode = async (lat, long) => {
+    try{
+        const response = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=en`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 export default fetchWeather;

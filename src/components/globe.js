@@ -4,6 +4,7 @@ import * as THREE from "three";
 
 import { useStateValue } from "../data/state";
 import Fade from "./fade";
+import Button from "./button";
 
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/scale.css";
@@ -98,9 +99,10 @@ export default function Globe() {
   ] = useState(false);
   const [hasGlobeTextureLoaded, setHasGlobeTextureLoaded] = useState(false);
   const [
-    { config, focusedMarker, hasLoaded, markers, start },
+    { config, focusedMarker, hasLoaded, markers, start, currentLocationalData },
     dispatch,
   ] = useStateValue();
+
   useEffect(() => {
     if (
       hasGlobeBackgroundTextureLoaded &&
@@ -131,6 +133,23 @@ export default function Globe() {
   return (
     <>
       <div className={hasLoaded ? undefined : "hidden"}>
+        <div
+          className={
+            start && !isFocusing
+              ? "absolute bottom-10 right-10 "
+              : "hidden absolute bottom-10 right-10 "
+          }
+        >
+          <Button
+            label="Go to your location"
+            onClick={() =>
+              dispatch({
+                type: "FOCUS",
+                payload: currentLocationalData,
+              })
+            }
+          />
+        </div>
         <ReactGlobe
           globeBackgroundTexture={globeBackgroundTexture}
           globeCloudsTexture={globeCloudsTexture}
