@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer } from "react";
 
 import config from "./config";
-import data from "./data"
+import data from "./data";
 
 const { lastUpdated, relatedTopics, trends } = data;
 
@@ -9,10 +9,11 @@ export const initialState = {
   config,
   focusedMarker: null,
   hasLoaded: false,
-//   lastUpdated,
+  //   lastUpdated,
   markers: trends,
-//   relatedTopics,
+  //   relatedTopics,
   start: false,
+  currentCoordinates: [20.5937, 78.9629],
 };
 
 export function reducer(state, action) {
@@ -32,6 +33,11 @@ export function reducer(state, action) {
       return {
         ...state,
         focusedMarker: payload,
+      };
+    case "COORDINATES":
+      return {
+        ...state,
+        currentCoordinates: payload,
       };
     default:
       return state;

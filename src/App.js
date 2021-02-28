@@ -1,13 +1,14 @@
 import "./App.css";
-import Globe from "./components/globs";
+import Globe from "./legacy/globs";
 import { useEffect, useState } from "react";
 import WelcomeScreen from "./components/welcome";
 import Intro from "./components/intro";
 import Overlay from "./components/overlay";
-import Globe2 from "./components/globe2";
+import Globe2 from "./components/globe";
 
 function App() {
   const [isWelcome, setIsWelcome] = useState(true);
+  
 
   useEffect(() => {
     if ("geolocation" in navigator) {

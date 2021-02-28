@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import ReactGlobe, { tween } from 'react-globe';
-import * as THREE from 'three';
+import React, { useEffect, useState } from "react";
+import ReactGlobe, { tween } from "react-globe";
+import * as THREE from "three";
 
-import { useStateValue } from '../data/state';
-import Fade from './fade';
+import { useStateValue } from "../data/state";
+import Fade from "./fade";
 
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/animations/scale.css';
+import "tippy.js/dist/tippy.css";
+import "tippy.js/animations/scale.css";
 
-const MARKER_COLOR = '#fcffbe';
-const MARKER_COMPANION_COLOR = '#fff9e6';
+const MARKER_COLOR = "#fcffbe";
+const MARKER_COMPANION_COLOR = "#fff9e6";
 
 function random(scaleFactor) {
   return Math.random() > 0.5
@@ -34,7 +34,7 @@ function markerRenderer(marker) {
     const companionGeometry = new THREE.SphereGeometry(
       Math.min((size * Math.random()) / 2, 1),
       10,
-      10,
+      10
     );
     const companionMaterial = new THREE.MeshBasicMaterial({
       color: new THREE.Color(MARKER_COMPANION_COLOR),
@@ -61,7 +61,7 @@ function markerRenderer(marker) {
         from,
         to,
         animationDuration: 4000,
-        easingFunction: ['Quadratic', 'InOut'],
+        easingFunction: ["Quadratic", "InOut"],
         onUpdate: () => {
           const [x, y, z] = from.position;
           const companionMaterial = companion.material;
@@ -101,14 +101,13 @@ export default function Globe() {
     { config, focusedMarker, hasLoaded, markers, start },
     dispatch,
   ] = useStateValue();
-
   useEffect(() => {
     if (
       hasGlobeBackgroundTextureLoaded &&
       hasGlobeCloudsTextureLoaded &&
       hasGlobeTextureLoaded
     ) {
-      dispatch({ type: 'LOADED' });
+      dispatch({ type: "LOADED" });
     }
   }, [
     dispatch,
@@ -131,18 +130,19 @@ export default function Globe() {
 
   return (
     <>
-      <div className={hasLoaded ? undefined : 'hidden'}>
+      <div className={hasLoaded ? undefined : "hidden"}>
         <ReactGlobe
           globeBackgroundTexture={globeBackgroundTexture}
           globeCloudsTexture={globeCloudsTexture}
           globeTexture={globeTexture}
           height="100vh"
           focus={focusedMarker?.coordinates}
+          // initialCoordinates={currentCoordinates}
           markers={start ? markers : []}
           width="100vw"
           options={options}
           onClickMarker={(marker) => {
-            dispatch({ type: 'FOCUS', payload: marker });
+            dispatch({ type: "FOCUS", payload: marker });
           }}
           onGlobeTextureLoaded={() => setHasGlobeTextureLoaded(true)}
           onGlobeBackgroundTextureLoaded={() =>
